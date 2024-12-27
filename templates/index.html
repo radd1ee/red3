@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Прогноз погоды для маршрута</title>
+</head>
+<body>
+    <h1>Прогноз погоды на маршруте</h1>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <form method="POST">
+        <label for="start_location">Начальная точка:</label>
+        <input type="text" id="start_location" name="start_location" required><br><br>
+
+        <label for="stops">Промежуточные точки (через запятую):</label>
+        <input type="text" id="stops" name="stops" placeholder="Например: Тула, Рязань"><br><br>
+
+        <label for="end_location">Конечная точка:</label>
+        <input type="text" id="end_location" name="end_location" required><br><br>
+
+        <label for="days">Прогноз на (дней):</label>
+        <select id="days" name="days" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br><br>
+
+        <input type="submit" value="Получить прогноз">
+    </form>
+
+    <form method="POST" action="/map">
+        <input type="hidden" name="start_location" value="{{ request.form['start_location'] }}">
+        <input type="hidden" name="stops" value="{{ request.form['stops'] }}">
+        <input type="hidden" name="end_location" value="{{ request.form['end_location'] }}">
+        <button type="submit">Показать маршрут на карте</button>
+    </form>
+
+
+    {% if weather_condition %}
+        <h2>Прогноз:</h2>
+        {% for point in weather_condition %}
+            <h3>{{ point.location }}:</h3>
+            <p>Погода: {{ point.condition }}</p>
+        {% endfor %}
+    {% endif %}
+
+    {% if overall_condition %}
+        <h2>Итог: {{ overall_condition }}</h2>
+    {% endif %}
+
+    <a href="/add_city"><button>Добавить новый город</button></a>
+
+    <a href="/dashboard"><button>Посмотреть графики</button></a>
+</body>
+</html>

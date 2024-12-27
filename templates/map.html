@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_10ba60c583d7fd2ce8dc3463feeaa99c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_10ba60c583d7fd2ce8dc3463feeaa99c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_10ba60c583d7fd2ce8dc3463feeaa99c = L.map(
+                "map_10ba60c583d7fd2ce8dc3463feeaa99c",
+                {
+                    center: [55.7558, 37.6176],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_547b398855559c1652be256d5730ce99 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_547b398855559c1652be256d5730ce99.addTo(map_10ba60c583d7fd2ce8dc3463feeaa99c);
+        
+    
+            var marker_cluster_fc409db79b7545ec300722fa711204c7 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_8b1e7f64afe45df5b0328dd7eae1c6e2 = L.marker(
+                [55.7558, 37.6176],
+                {
+}
+            ).addTo(marker_cluster_fc409db79b7545ec300722fa711204c7);
+        
+    
+        var popup_b6e5b26b6b036163d44a0db0fe1c8e6c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_13ea3760bb0577cd8c4084cd2115d165 = $(`<div id="html_13ea3760bb0577cd8c4084cd2115d165" style="width: 100.0%; height: 100.0%;"><b>Москва</b><br>Температура: -4.3 °C<br>Влажность: 88 %<br>Ветер: 18.5 км/ч<br>Осадки: 0 %</div>`)[0];
+                popup_b6e5b26b6b036163d44a0db0fe1c8e6c.setContent(html_13ea3760bb0577cd8c4084cd2115d165);
+            
+        
+
+        marker_8b1e7f64afe45df5b0328dd7eae1c6e2.bindPopup(popup_b6e5b26b6b036163d44a0db0fe1c8e6c)
+        ;
+
+        
+    
+    
+            marker_8b1e7f64afe45df5b0328dd7eae1c6e2.bindTooltip(
+                `<div>
+                     Погода в Москва
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_75cea0c01972f2360a270ffe5de48ae4 = L.marker(
+                [40.7146, -74.0028],
+                {
+}
+            ).addTo(marker_cluster_fc409db79b7545ec300722fa711204c7);
+        
+    
+        var popup_493f9b66b41a9c6a54ccd40efc9c091c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a082ddf48a2b143e30771508a9ea62d = $(`<div id="html_0a082ddf48a2b143e30771508a9ea62d" style="width: 100.0%; height: 100.0%;"><b>Нью-Йорк</b><br>Температура: -6.7 °C<br>Влажность: 55 %<br>Ветер: 22.5 км/ч<br>Осадки: 0 %</div>`)[0];
+                popup_493f9b66b41a9c6a54ccd40efc9c091c.setContent(html_0a082ddf48a2b143e30771508a9ea62d);
+            
+        
+
+        marker_75cea0c01972f2360a270ffe5de48ae4.bindPopup(popup_493f9b66b41a9c6a54ccd40efc9c091c)
+        ;
+
+        
+    
+    
+            marker_75cea0c01972f2360a270ffe5de48ae4.bindTooltip(
+                `<div>
+                     Погода в Нью-Йорк
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_887483bf22bff0475bc3672dfdfa740d = L.marker(
+                [54.1931, 37.6173],
+                {
+}
+            ).addTo(marker_cluster_fc409db79b7545ec300722fa711204c7);
+        
+    
+        var popup_2d17b082cdbc8e6f7691d4e4cf467ff4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_352bea7b45dd437e18b7d843c0c530e9 = $(`<div id="html_352bea7b45dd437e18b7d843c0c530e9" style="width: 100.0%; height: 100.0%;"><b>Тула</b><br>Температура: -3.1 °C<br>Влажность: 82 %<br>Ветер: 9.3 км/ч<br>Осадки: 2 %</div>`)[0];
+                popup_2d17b082cdbc8e6f7691d4e4cf467ff4.setContent(html_352bea7b45dd437e18b7d843c0c530e9);
+            
+        
+
+        marker_887483bf22bff0475bc3672dfdfa740d.bindPopup(popup_2d17b082cdbc8e6f7691d4e4cf467ff4)
+        ;
+
+        
+    
+    
+            marker_887483bf22bff0475bc3672dfdfa740d.bindTooltip(
+                `<div>
+                     Погода в Тула
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_37d45ec90bb72a7700cd104d1ece4285 = L.marker(
+                [34.0558, -118.2461],
+                {
+}
+            ).addTo(marker_cluster_fc409db79b7545ec300722fa711204c7);
+        
+    
+        var popup_e9f922b38068f01ab50ff0bc9171aebe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dfc4e9bb088f3f5dbfcd268baa1e4074 = $(`<div id="html_dfc4e9bb088f3f5dbfcd268baa1e4074" style="width: 100.0%; height: 100.0%;"><b>Лос-Анджелес</b><br>Температура: 14.4 °C<br>Влажность: 64 %<br>Ветер: 7.4 км/ч<br>Осадки: 0 %</div>`)[0];
+                popup_e9f922b38068f01ab50ff0bc9171aebe.setContent(html_dfc4e9bb088f3f5dbfcd268baa1e4074);
+            
+        
+
+        marker_37d45ec90bb72a7700cd104d1ece4285.bindPopup(popup_e9f922b38068f01ab50ff0bc9171aebe)
+        ;
+
+        
+    
+    
+            marker_37d45ec90bb72a7700cd104d1ece4285.bindTooltip(
+                `<div>
+                     Погода в Лос-Анджелес
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_fc409db79b7545ec300722fa711204c7.addTo(map_10ba60c583d7fd2ce8dc3463feeaa99c);
+        
+</script>
+</html>
